@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F41457E0-6468-473E-9956-C58CBB37F9CF}</ProjectGuid>
+    <ProjectTypeGuids>{349C5851-65DF-11DA-9384-00065B846F21};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>SNSWeb</RootNamespace>
+    <AssemblyName>SNSWeb</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Runtime.Serialization" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Global.asax" />
+    <Content Include="Web.config" />
+    <Content Include="Registration.aspx" />
+    <Content Include="SNSStyle.css" />
+    <Content Include="Fonts\Sacramento-Regular.ttf" />
+    <Content Include="Fonts\Montserrat\Montserrat-Black.ttf" />
+    <Content Include="Fonts\Montserrat\Montserrat-BlackItalic.ttf" />
+    <Content Include="Fonts\Montserrat\Montserrat-Bold.ttf" />
+    <Content Include="Fonts\Montserrat\Montserrat-BoldItalic.ttf" />
+    <Content Include="Fonts\Montserrat\Montserrat-ExtraBold.ttf" />
+    <Content Include="Fonts\Montserrat\Montserrat-ExtraBoldItalic.ttf" />
+    <Content Include="Fonts\Montserrat\Montserrat-ExtraLight.ttf" />
+    <Content Include="Fonts\Montserrat\Montserrat-ExtraLightItalic.ttf" />
+    <Content Include="Fonts\Montserrat\Montserrat-Italic.ttf" />
+    <Content Include="Fonts\Montserrat\Montserrat-Light.ttf" />
+    <Content Include="Fonts\Montserrat\Montserrat-LightItalic.ttf" />
+    <Content Include="Fonts\Montserrat\Montserrat-Medium.ttf" />
+    <Content Include="Fonts\Montserrat\Montserrat-MediumItalic.ttf" />
+    <Content Include="Fonts\Montserrat\Montserrat-Regular.ttf" />
+    <Content Include="Fonts\Montserrat\Montserrat-SemiBold.ttf" />
+    <Content Include="Fonts\Montserrat\Montserrat-SemiBoldItalic.ttf" />
+    <Content Include="Fonts\Montserrat\Montserrat-Thin.ttf" />
+    <Content Include="Fonts\Montserrat\Montserrat-ThinItalic.ttf" />
+    <Content Include="Login.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="SNSMaster.master" />
+    <Content Include="Images\SNSlogo.png" />
+    <Content Include="Order.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Registration.aspx.cs">
+      <DependentUpon>Registration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Registration.aspx.designer.cs">
+      <DependentUpon>Registration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\www.w3schools.com\Reference.cs">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SNSMaster.master.cs">
+      <DependentUpon>SNSMaster.master</DependentUpon>
+    </Compile>
+    <Compile Include="SNSMaster.master.designer.cs">
+      <DependentUpon>SNSMaster.master</DependentUpon>
+    </Compile>
+    <Compile Include="Order.aspx.cs">
+      <DependentUpon>Order.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Order.aspx.designer.cs">
+      <DependentUpon>Order.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Scripts\" />
+    <Folder Include="Content\" />
+    <Folder Include="Fonts\" />
+    <Folder Include="Fonts\Montserrat\" />
+    <Folder Include="Images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\www.w3schools.com" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\www.w3schools.com\tempconvert.wsdl" />
+    <None Include="Service References\www.w3schools.com\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ProjectExtensions>
+    <MonoDevelop>
+      <Properties>
+        <XspParameters Port="8080" Address="127.0.0.1" SslMode="None" SslProtocol="Default" KeyType="None" CertFile="" KeyFile="" PasswordOptions="None" Password="" Verbose="True" />
+      </Properties>
+    </MonoDevelop>
+  </ProjectExtensions>
+</Project>

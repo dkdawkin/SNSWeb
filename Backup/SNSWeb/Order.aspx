@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" Inherits="SNSWeb.Order" %>
-
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
     <!DOCTYPE html>
     <html>
 
@@ -16,7 +16,7 @@
             <li><a class="NavLink" href="Registration.aspx">Sign Up</a></li>
             <img class="NavImg" src="/Images/SNSlogo.png" />
             <li><a class="NavLink" href="Order.aspx">Order</a></li>
-            <li><a class="NavLink" href="#">About</a></li>
+            <li><a class="NavLink" href="about.asp">About</a></li>
         </ul>
 
         <form id="form1" runat="server">
