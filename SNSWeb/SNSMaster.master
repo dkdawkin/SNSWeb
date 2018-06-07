@@ -1,0 +1,28 @@
+﻿<%@ Master Language="C#" Inherits="SNSWeb.SNSMaster" %>
+    <!DOCTYPE html>
+    <html>
+
+    <head runat="server">
+        <title>SNSMaster</title>
+    </head>
+
+    <body>
+        <ul>
+            <li><a class="bottomNavLink" href="Login.aspx">Home</a></li>
+            <li><a class="bottomNavLink" href="news.asp">News</a></li>
+            <li><a class="bottomNavLink" href="contact.asp">Contact</a></li>
+            <li><a class="bottomNavLink" href="about.asp">About</a></li>
+        </ul>
+        <div id="container">
+            <h1>SNS Cakes</h1>
+            <asp:ContentPlaceHolder id="contentPlaceHolder" runat="server" />
+        </div>
+        <ul>
+            <li><a class="bottomNavLink" href="Login.aspx">Home</a></li>
+            <li><a class="bottomNavLink" href="news.asp">News</a></li>
+            <li><a class="bottomNavLink" href="contact.asp">Contact</a></li>
+            <li><a class="bottomNavLink" href="about.asp">About</a></li>
+        </ul>
+    </body>
+
+    </html>

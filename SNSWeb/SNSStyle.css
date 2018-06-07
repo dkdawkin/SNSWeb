@@ -1,0 +1,247 @@
+﻿
+body {
+    min-width: 1150px;
+    min-height: 600px;
+}
+
+form {
+    margin: auto;
+    width:70%;
+    border: solid;
+    border-width:1px;
+    border-color: lightcoral;
+    background-color: #fef7ed;
+    height:600px;
+    min-width:800px;
+    min-height:600px;
+}
+
+hr {
+    width: 35%;
+    border-top-width: 1px;
+    border-top: solid;
+    border-color: lightcoral;
+}
+
+h1 {
+    text-align:center;
+    color:lightcoral;
+    font-family:Sacramento;
+    font-size:45px;
+    font-weight:bold;
+}
+
+h2 {
+    text-align: center;
+    color: black;
+    font-weight:bold;
+    font-family: Sacramento;
+    font-weight: bold;
+    font-size:xx-large;
+    padding-top:50px;
+}
+
+ul {
+    position:relative;
+    right: 20px;
+    list-style-type: none;
+    margin:auto;
+    width:30%;
+    font-size: 15px;
+    text-align:center;
+}
+
+li {
+    display: inline;
+    padding-left: 5px;
+    padding-right: 5px;
+
+}
+
+a.NavLink {
+    position:relative;
+    bottom:15px;
+    text-decoration-color: black;
+    text-decoration: none;
+    color: lightcoral;
+    font-family: Montserrat;
+}
+
+a.bottomNavLink {
+    position: relative;
+    top: 15px;
+    text-decoration-color: black;
+    text-decoration: none;
+    color: lightcoral;
+    font-family: Montserrat;
+}
+
+img.NavImg {
+    position:relative;
+    top: 40px;
+    height: 100px;
+    width: 100px;
+
+}
+
+registrationTablesDiv {
+    display: inline-flex;
+    height: 500px;
+    background-color: #fef7ed;
+}
+
+orderTablesDiv {
+    display: inline-flex;
+    height: 500px;
+    background-color: #fef7ed;
+}
+
+.orderTable {
+    width: 70%;
+    padding-bottom: 50px;
+    padding-top:50px;
+    margin: auto;
+    height: 400px;
+    font-family: Montserrat;
+    font-weight: lighter;
+    background-color: #fef7ed;
+}
+
+.loginTable {
+    width: 60%;
+    padding-top: 100px;
+    padding-bottom: 150px;
+    margin:auto;
+    height: 400px;
+    font-family: Montserrat;
+    font-weight: lighter;
+    background-color:#fef7ed;
+}
+
+.RegistrationTable {
+    padding-bottom:40px;
+    padding-top:40px;
+    width: 60%;
+    height: 400px;
+    margin: auto;
+    font-family: Montserrat;
+    font-weight: lighter;
+    background-color:#fef7ed;
+}
+
+.RegistrationBtn {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 8%;
+    height: 35px;
+    border: solid;
+    font-family: Montserrat;
+    background-color: lightcoral;
+    border-color:#fef7ed;
+    color: white;
+}
+
+.OrderFormBtn {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 25%;
+    height: 35px;
+    border: solid;
+    font-family: Montserrat;
+    background-color: lightcoral;
+    border-color: #fef7ed;
+    color: white;
+}
+
+.Signinlink {
+    display: block;
+    width: 8%;
+    margin: auto;
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-color: lightcoral;
+    border-color: #fef7ed;
+}
+
+.forgotPassworkLink {
+    height: 20px;
+    font-size:small;
+    text-decoration: underline;
+}
+
+.center {
+    display: block;
+    border:solid;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+div.orderBtnDiv {
+    width: 300px;
+    position: relative;
+    bottom:30px;
+    margin: auto;
+    padding: 0px;
+    height: 25px;
+    display: flex;
+}
+
+.buttonDiv {
+    width: 100%;
+    margin: auto;
+    padding: 0px;
+    display: inline-flex;
+    height: 45px;
+}
+
+.test {
+    border: solid;
+    border-color: blue;
+}
+
+.textBox{
+    
+    border:none;
+    border-bottom:solid;
+    border-bottom-color:lightcoral;
+    background-color:#fef7ed;
+    border-width:.5px;
+    height:25px;
+    width:300px;
+
+}
+
+.dropDownList {
+    border: .5px solid lightcoral;
+    width: 250px;
+    border-radius: 0px;
+    padding: 3px;
+    text-align:center;
+    -webkit-appearance: none;
+}
+
+.radioBtn {
+    padding-left:10px;
+    padding-right:10px;
+}
+
+
+
+
+@font-face {
+    font-family: "Sacramento";
+    src: url('https://fonts.googleapis.com/css?family=Sacramento');
+}
+
+@font-face {
+    font-family: "OpenSans";
+    src: url("https://fonts.googleapis.com/css?family=Open+Sans");
+}
+
+@font-face {
+    font-family: Montserrat;
+    src: url('Fonts/Montserrat/Montserrat-Medium.ttf');
+}
