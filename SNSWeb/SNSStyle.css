@@ -96,15 +96,28 @@ orderTablesDiv {
     background-color: #fef7ed;
 }
 
-.orderTable {
+.orderConfTable {
     width: 70%;
     padding-bottom: 50px;
-    padding-top:50px;
+    padding-top: 50px;
     margin: auto;
     height: 400px;
     font-family: Montserrat;
     font-weight: lighter;
     background-color: #fef7ed;
+
+}
+
+.orderTable {
+    width: 70%;
+    padding-bottom: 50px;
+    padding-top: 50px;
+    margin: auto;
+    height: 400px;
+    font-family: Montserrat;
+    font-weight: lighter;
+    background-color: #fef7ed;
+    display: none;
 }
 
 .loginTable {
@@ -153,6 +166,20 @@ orderTablesDiv {
     background-color: lightcoral;
     border-color: #fef7ed;
     color: white;
+}
+
+.OrderFormChkBtn {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 25%;
+    height: 35px;
+    border: solid;
+    font-family: Montserrat;
+    background-color: lightcoral;
+    border-color: #fef7ed;
+    color: white;
+    border:solid;
 }
 
 .Signinlink {

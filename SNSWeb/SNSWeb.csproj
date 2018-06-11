@@ -77,6 +77,7 @@
     <Content Include="SNSMaster.master" />
     <Content Include="Images\SNSlogo.png" />
     <Content Include="Order.aspx" />
+    <Content Include="Scripts\SNSScripts.js" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">

@@ -15,9 +15,15 @@ namespace SNSWeb {
 		
 		protected System.Web.UI.HtmlControls.HtmlForm form1;
 		
+		protected System.Web.UI.WebControls.Table ordersTable;
+		
 		protected System.Web.UI.WebControls.DropDownList occasionDdl;
 		
 		protected System.Web.UI.WebControls.DropDownList desertTypeDdl;
+		
+		protected System.Web.UI.WebControls.RadioButton radioBtnYes;
+		
+		protected System.Web.UI.WebControls.RadioButton radioBtnNo;
 		
 		protected System.Web.UI.WebControls.DropDownList servingSizeDdl;
 		
@@ -27,8 +33,12 @@ namespace SNSWeb {
 		
 		protected System.Web.UI.HtmlControls.HtmlTextArea foodAlergiesTextArea;
 		
+		protected System.Web.UI.WebControls.Table confTable;
+		
 		protected System.Web.UI.WebControls.Button addItemBtn;
 		
 		protected System.Web.UI.WebControls.Button doneBtn;
+		
+		protected System.Web.UI.WebControls.Button checkOutBtn;
 	}
 }

@@ -6,6 +6,8 @@
     <head runat="server">
         <link href="SNSStyle.css" rel="stylesheet">
         <title>Order</title>
+        <script type="text/javascript"  src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+        <script type="text/javascript"  src= "Scripts/SNSScripts.js"></script>
     </head>
 
     <body>
@@ -20,10 +22,10 @@
         </ul>
 
         <form id="form1" runat="server">
-            <h2> - Order - </h2>
+            <h2 id="orderTableTitle"> - Order - </h2>
             <div class="orderTableDiv">
 
-                <asp:Table runat="server" CssClass="orderTable">
+                <asp:Table id="ordersTable" runat="server" CssClass="orderTable">
 
                     <asp:TableRow runat="server">
                         <asp:TableCell runat="server">Occasion:</asp:TableCell>
@@ -44,8 +46,8 @@
                     <asp:TableRow runat="server">
                         <asp:TableCell runat="server">Cake Stand/ Tower Rental:</asp:TableCell>
                         <asp:TableCell runat="server">
-                            <asp:RadioButton CssClass="radioBtn" runat="server" Text="Yes"></asp:RadioButton>
-                            <asp:RadioButton CssClass="radioBtn" runat="server" Text="No"></asp:RadioButton>
+                            <asp:RadioButton id="radioBtnYes" CssClass="radioBtn" runat="server" Text="Yes"></asp:RadioButton>
+                            <asp:RadioButton id="radioBtnNo" CssClass="radioBtn" runat="server" Text="No"></asp:RadioButton>
                         </asp:TableCell>
                     </asp:TableRow>
 
@@ -79,10 +81,31 @@
 
                 </asp:Table>
 
+                <asp:Table id="confTable" runat="server" CssClass="orderConfTable">
+
+                    <asp:TableRow runat="server">
+                        <asp:TableCell runat="server">Occasion:</asp:TableCell>
+                        <asp:TableCell runat="server">
+                            <asp:DropDownList CssClass="dropDownList" runat="server" ></asp:DropDownList>
+                        </asp:TableCell>
+                    </asp:TableRow>
+
+                    <asp:TableRow runat="server">
+                        <asp:TableCell runat="server">Desert Type: </asp:TableCell>
+                        <asp:TableCell runat="server">
+                     
+                                <asp:DropDownList CssClass="dropDownList" runat="server" ></asp:DropDownList>
+                 
+                        </asp:TableCell>
+                    </asp:TableRow>
+
+                </asp:Table>
+
             </div>
             <div align="center" class="orderBtnDiv">
-                <asp:Button id="addItemBtn" CssClass="OrderFormBtn" runat="server" Text="Add Item" OnClick="addItemBtn_Click" />
-                <asp:Button id="doneBtn" CssClass="OrderFormBtn" runat="server" Text="Done" />
+                <asp:Button id="addItemBtn" CssClass="OrderFormBtn" runat="server" Text="Add Item" OnClientClick="addItemBtn_Click();return false;" />
+                <asp:Button id="doneBtn" CssClass="OrderFormBtn" OnClientClick="doneBtnClick(); return false;" runat="server" Text="Done" />
+                <asp:Button id="checkOutBtn" CssClass="OrderFormChkBtn" runat="server" Text="Checkout" />
 
             </div>
         </form>

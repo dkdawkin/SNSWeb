@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.Tracing;
 using System.Web;
 using System.Web.UI;
 
@@ -24,19 +25,47 @@ namespace SNSWeb
 
         protected void Page_Load(object sender, EventArgs args)
         {
+            occasionDdl.Items.Add("  ");
             occasionDdl.Items.Add("Birthday");
             occasionDdl.Items.Add("Anniversary");
             occasionDdl.Items.Add("Wedding");
             occasionDdl.Items.Add("Baby");
             occasionDdl.Items.Add("Graduation");
 
+            desertTypeDdl.Items.Add("  ");
+            desertTypeDdl.Items.Add("Birthday");
+            desertTypeDdl.Items.Add("Anniversary");
+            desertTypeDdl.Items.Add("Wedding");
+            desertTypeDdl.Items.Add("Baby");
+            desertTypeDdl.Items.Add("Graduation");
+
+            servingSizeDdl.Items.Add("  ");
+            servingSizeDdl.Items.Add("Birthday");
+            servingSizeDdl.Items.Add("Anniversary");
+            servingSizeDdl.Items.Add("Wedding");
+            servingSizeDdl.Items.Add("Baby");
+            servingSizeDdl.Items.Add("Graduation");
+
+            DesertFlavorDdl.Items.Add("  ");
+            DesertFlavorDdl.Items.Add("Birthday");
+            DesertFlavorDdl.Items.Add("Anniversary");
+            DesertFlavorDdl.Items.Add("Wedding");
+            DesertFlavorDdl.Items.Add("Baby");
+            DesertFlavorDdl.Items.Add("Graduation");
+
+            frostingFlavorDdl.Items.Add("  ");
+            frostingFlavorDdl.Items.Add("Birthday");
+            frostingFlavorDdl.Items.Add("Anniversary");
+            frostingFlavorDdl.Items.Add("Wedding");
+            frostingFlavorDdl.Items.Add("Baby");
+            frostingFlavorDdl.Items.Add("Graduation");
+
         }
 
-        protected void addItemBtn_Click(object sender, EventArgs e)
+
+        protected void addItemBtn_Click(object sender, EventTags e)
         {
-            string queryString = "test.aspx";
-            string newWin = "window.open('" + queryString + "');";
-            ClientScript.RegisterStartupScript(this.GetType(), "pop", newWin, true);
+          //  ScriptManager.RegisterStartupScript(this.Page, this.GetType(), "script", "buttonClick();", true);
         }
 
     }
