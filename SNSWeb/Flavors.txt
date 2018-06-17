@@ -1,0 +1,23 @@
+﻿CakeFlavorsStart,
+Vanilla, Chocolate, Strawberry, 
+Lemon, Red Velvet, Blue Velvet, Pink Lemonade, Champagne, Marble,
+Old Fashion Yellow Cake, White Cake, Cookies and Creame, 
+CakeFlavorsEnd,  
+
+CookieFlavorsStart,
+Chocolate chip,
+White Chocolate Macadamia, Oatmeal Rasin, Double Chocolate Chip, 
+Sugar, Snikerdoodle, Lemon,
+CookieFlavorsEnd,
+
+CheesecakeFlavorsStart,
+New York Style, Chocolate Chip, Cookies and Creame, Lemon,
+Stawberry Blueberry, Red Velvet,
+CheesecakeFlavorsEnd,
+
+FrostingFlavorsStart,
+
+
+FrostingFlavorsEnd,
+
+       

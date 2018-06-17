@@ -8,6 +8,15 @@
         <title>Order</title>
         <script type="text/javascript"  src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
         <script type="text/javascript"  src= "Scripts/SNSScripts.js"></script>
+         <script>
+   <!-- $( document ).ready(function() {
+        alert( "document loaded" );
+    });
+ 
+    $( window ).on( "load", function() {
+       alert($('#pageStateFadeOut').val());
+    });-->
+    </script>
     </head>
 
     <body>
@@ -38,7 +47,8 @@
                         <asp:TableCell runat="server">Desert Type: </asp:TableCell>
                         <asp:TableCell runat="server">
                      
-                                <asp:DropDownList CssClass="dropDownList" runat="server" id="desertTypeDdl"></asp:DropDownList>
+                                <asp:DropDownList CssClass="dropDownList" OnSelectedIndexChanged="desertDDlChanged" 
+                                runat="server" AutoPostBack= "true" id="desertTypeDdl"></asp:DropDownList>
                  
                         </asp:TableCell>
                     </asp:TableRow>
@@ -95,26 +105,27 @@
                         <asp:TableCell runat="server">
                      
                                 <asp:DropDownList CssClass="dropDownList" runat="server" ></asp:DropDownList>
-                 
                         </asp:TableCell>
                     </asp:TableRow>
-
                 </asp:Table>
 
             </div>
             <div align="center" class="orderBtnDiv">
-                <asp:Button id="addItemBtn" CssClass="OrderFormBtn" runat="server" Text="Add Item" OnClientClick="addItemBtn_Click();return false;" />
-                <asp:Button id="doneBtn" CssClass="OrderFormBtn" OnClientClick="doneBtnClick(); return false;" runat="server" Text="Done" />
-                <asp:Button id="checkOutBtn" CssClass="OrderFormChkBtn" runat="server" Text="Checkout" />
-
+                <asp:Button id="addItemBtn" CssClass="OrderFormBtn" runat="server" Text="Add Item" OnClientClick="addItemBtn_Click();" />
+                <asp:Button id="doneBtn" CssClass="OrderFormBtn" OnClientClick="doneBtnClick();" runat="server" Text="Done" />
+                <asp:Button id="checkOutBtn" CssClass="OrderFormChkBtn" runat="server" Text="Checkout" OnClick= "checkOutBtn_Click" />
             </div>
         </form>
+
         <ul>
             <li><a class="bottomNavLink" href="Login.aspx">Home</a></li>
             <li><a class="bottomNavLink" href="Registration.aspx">Sign Up</a></li>
             <li><a class="bottomNavLink" href="Order.aspx">Order</a></li>
             <li><a class="bottomNavLink" href="about.asp">About</a></li>
         </ul>
+        <asp:HiddenField runat="server" id = "hiddenField"></asp:HiddenField>
+        <asp:HiddenField runat="server" id = "hiddenField1"></asp:HiddenField>
+
     </body>
 
     </html>

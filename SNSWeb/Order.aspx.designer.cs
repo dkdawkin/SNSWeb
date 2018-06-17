@@ -40,5 +40,9 @@ namespace SNSWeb {
 		protected System.Web.UI.WebControls.Button doneBtn;
 		
 		protected System.Web.UI.WebControls.Button checkOutBtn;
+		
+		protected System.Web.UI.WebControls.HiddenField hiddenField;
+		
+		protected System.Web.UI.WebControls.HiddenField hiddenField1;
 	}
 }

@@ -1,4 +1,5 @@
-﻿function addItemBtn_Click() {
+﻿function addItemBtn_Click()
+{
     $('#confTable').stop().fadeOut();
     $('#addItemBtn').stop().fadeOut();
     $('#checkOutBtn').stop().fadeOut();
@@ -7,6 +8,11 @@
     $('#ordersTable').stop().fadeIn(250);
     $('#doneBtn').stop().fadeIn();
 
+// Setting JqueryPage functions #<%=pageStateFadeOut.ClientID %>
+    $('#hiddenField').val('FadeOut: confTable,addItemBtn,confTable');
+    $('#hiddenField1').val('FadeIn: ordersTable,doneBtn');
+    alert($('#hiddenField').val())
+    alert($('#hiddenField1').val())
 }
 
 function doneBtnClick() {
@@ -17,20 +23,27 @@ function doneBtnClick() {
     $('#confTable').stop().fadeIn(250);
     $('#addItemBtn').stop().fadeIn();
     $('#checkOutBtn').stop().fadeIn();
-    var valid = validating();
+
+    // Setting JqueryPage functions
+    $('#hiddenField').val('Success stored value in hidden Field');
+    $('#hiddenField1').val('FadeOut: ordersTable,doneBtn');
+    alert($('#hiddenField').val())
+    alert($('#hiddenField1').val())
+
+   <!--- var valid = validating();
 
     if (valid == true) {
 
-    }
+    } -->
 }
 
-function validating() 
+function validating()
 {
 
     if ($('#radioBtnYes').is(':checked')) {
         alert("it's checked");
         var cakeStandRental = "Yes";
-    } 
+    }
 
     if ($('#occasionDdl option:selected').text() == "  ") {
         alert("You must select an occasion.");
@@ -58,7 +71,8 @@ function validating()
     addNewOrderLine(cakeStandRental);
 }
 
-function addNewOrderLine(x) {
+function addNewOrderLine(x)
+{
     var orderLine = $('#occasionDdl option:selected').text() + " <>  " +
         $('#desertTypeDdl option:selected').text() + " <>  " +
         x + " <>  " +
@@ -67,4 +81,8 @@ function addNewOrderLine(x) {
         $('#frostingFlavorDdl option:selected').text() + " <>  ";
     alert(orderLine);
 
+}
+function desertDdlChanged()
+{
+    alert("Desert DDL was changed");
 }
