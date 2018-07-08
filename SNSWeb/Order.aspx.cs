@@ -16,10 +16,10 @@ namespace SNSWeb
         private bool doneBtnFlag = false;
         private bool cakeBtnFlag = false;
 
-        static StreamReader reader = new StreamReader("Flavors.txt");
-        private ListItem flavor = new ListItem();
-        static string Flavors = reader.ReadToEnd();
-        private string[] flavorFile = Flavors.Split(',').ToArray();
+        //static StreamReader reader = new StreamReader("Flavors.txt");
+        //private ListItem flavor = new ListItem();
+        //static string Flavors = reader.ReadToEnd();
+        //private string[] flavorFile = Flavors.Split(',').ToArray();
 
 
 

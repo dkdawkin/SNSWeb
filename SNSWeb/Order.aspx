@@ -5,7 +5,7 @@
 
     <head runat="server">
         <link href="SNSStyle.css" rel="stylesheet">
-        <title id="">Order</title>
+        <title id="orderTitle">Order</title>
         <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
         <script type="text/javascript" src="Scripts/SNSScripts.js"></script>
         <script>
@@ -94,7 +94,7 @@
                                 <asp:DropDownList runat="server" id="desertFlavorDdl" CssClass="dropDownList" />
                             </div>
                         </asp:TableCell>
-                    
+                    </asp:TableRow>
                     <asp:TableRow runat="server" id="frostingTypeRow">
                         <asp:TableCell>
                             <div class="orderRow">
@@ -102,7 +102,7 @@
                                 <asp:DropDownList runat="server" id="frostingFlavorDdl" CssClass="dropDownList" />
                             </div>
                         </asp:TableCell>
-
+                        </asp:TableRow>
                         <asp:TableRow runat="server" id="servingSizeRow">
                         <asp:TableCell>
                             <div class="orderRow">
@@ -110,7 +110,7 @@
                                 <asp:TextBox runat="server" id="servingSizeDdl" CssClass="textBox" />
                             </div>
                         </asp:TableCell>
-                    </asp:TableRow>
+                    
                     </asp:TableRow>
                     
                 </asp:Table>
