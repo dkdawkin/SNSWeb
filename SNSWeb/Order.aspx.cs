@@ -11,175 +11,111 @@ namespace SNSWeb
 
     public partial class Order : System.Web.UI.Page
     {
-        
+
+        private bool addItemFlag = false;
+        private bool doneBtnFlag = false;
+        private bool cakeBtnFlag = false;
 
         static StreamReader reader = new StreamReader("Flavors.txt");
         private ListItem flavor = new ListItem();
         static string Flavors = reader.ReadToEnd();
         private string[] flavorFile = Flavors.Split(',').ToArray();
-        private int count = 0;
 
 
 
         protected void Page_Load(object sender, EventArgs args)
         {
-            
-            if(!IsPostBack)
-            loadDropDown();
 
+            if (!IsPostBack)
+                orderDetailsTable.Style["display"] = "none";
+            else
+                updateLabels(); 
+           
+
+        }
+
+        public void updateLabels()
+        {
+            occasionLbl.Text = "Whats the occasion?";
+            //desertTypeLbl.Text = "Cake: ";
+            //desertFlavorLbl.Text = "Cake Flavor: ";
+            //frostingFlavorLbl.Text = "Frosting Flavor: ";
+            //servingSizeLbl.Text = "Serving Size: ";
         }
 
 
         protected void checkOutBtn_Click(object sender, EventArgs e)
         {
-            foodAlergiesTextArea.Value = hiddenField.Value;
-            foodAlergiesTextArea.Value = hiddenField1.Value;
+            //foodAlergiesTextArea.Value = hiddenField.Value;
+            //foodAlergiesTextArea.Value = hiddenField1.Value;
 
         }
 
 
-        //Load Desert Flavors based upon cake selection
-        protected void desertDDlChanged(object sender, EventArgs args)
+        /// <summary>
+        /// Adding new item to sales order
+        /// </summary>
+        /// <param name="sender">Sender.</param>
+        /// <param name="e">E.</param>
+        protected void addItemBtn_Click(object sender, EventArgs e)
         {
-            if (desertTypeDdl.SelectedItem.Text.Contains("Cake") ||
-               desertTypeDdl.SelectedItem.Text.Equals("Cupcakes") ||
-                desertTypeDdl.SelectedItem.Text.Equals("Cake Pops"))
-            {
-                loadCakeFlavors();
-                return;
-            }
+            addItemFlag = true;
+            updateDisplay();
 
-            if (desertTypeDdl.SelectedItem.Text.Contains("Cookies"))
-            {
-                loadCookieFlavor();
-                return;
-            }
 
-            if (desertTypeDdl.SelectedItem.Text.Contains("Cheesecake"))
-            {
-                loadCheeseCakeFlavor();
-                return;
-            }
         }
 
-
-        private void loadDropDown()
+        protected void doneBtn_Click(object sender, EventArgs e)
         {
-            occasionDdl.Items.Add("  ");
-            occasionDdl.Items.Add("Birthday");
-            occasionDdl.Items.Add("Anniversary");
-            occasionDdl.Items.Add("Wedding");
-            occasionDdl.Items.Add("Baby");
-            occasionDdl.Items.Add("Graduation");
+            addItemBtn.Style["Display"] = "block";
+            checkOutBtn.Style["Display"] = "block";
 
-            desertTypeDdl.Items.Add("  ");
-            desertTypeDdl.Items.Add("Cake");
-            desertTypeDdl.Items.Add("Cupcakes");
-            desertTypeDdl.Items.Add("Cake Pops");
-            desertTypeDdl.Items.Add("Cookies");
-            desertTypeDdl.Items.Add("Cheesecake");
+            orderTableTitle.InnerText = "- Order -";
 
-            servingSizeDdl.Items.Add("  ");
-            for (int i = 0; i < 500; i++)
-            {
-                if (i % 10 == 0)
-                    servingSizeDdl.Items.Add(i.ToString());
-            }
-
-
-            frostingFlavorDdl.Items.Add("  ");
-            frostingFlavorDdl.Items.Add("Birthday");
-            frostingFlavorDdl.Items.Add("Anniversary");
-            frostingFlavorDdl.Items.Add("Wedding");
-            frostingFlavorDdl.Items.Add("Baby");
-            frostingFlavorDdl.Items.Add("Graduation");
+            addItemFlag = false;
+            cakeBtnFlag = false;
         }
 
-        //Retrieving cake flavors
-        public void loadCakeFlavors()
+        protected void cakeButton_Click(object sender, EventArgs e)
         {
-            DesertFlavorDdl.Items.Clear();
+            cakeBtnFlag = true;
+            updateDisplay();
 
-            bool validCakeFlavors = false;
-            count = 0;
 
-            foreach (string word in flavorFile)
-            {
-                if (word.Contains("CakeFlavorsStart"))
-                {
-                    validCakeFlavors = true;
-                    continue;
-                }
-                else if (word.Contains("CakeFlavorsEnd"))
-                    return;
-
-                if (validCakeFlavors == true)
-                {
-                    flavor = new ListItem();
-                    flavor.Text = word.Trim(',');
-                    flavor.Value = "cakeFlavor " + count;
-                    DesertFlavorDdl.Items.Add(flavor);
-                    count++;
-                }
-            }
         }
 
-        // Retrieving cookie flavor   
-        public void loadCookieFlavor()
+
+        public void updateDisplay()
         {
-            DesertFlavorDdl.Items.Clear();
 
-            bool validCookieFlavors = false;
-            count = 0;
-
-            foreach (string word in flavorFile)
+            /// Execute this update if addItem Button was clicked 
+            if (addItemFlag)
             {
-                if (word.Contains("CookieFlavorsStart"))
-                {
-                    validCookieFlavors = true;
-                    continue;
-                }
-                else if (word.Contains("CookieFlavorsEnd"))
-                    return;
+                ///Displaying orders table 
+                orderTableTitle.InnerText = "- Add Item -";
+                ordersTable.Style["Display"] = "table";
+                doneBtn.Style["Display"] = "block";
 
-                if (validCookieFlavors == true)
-                {
-                    flavor = new ListItem();
-                    flavor.Text = word.Trim(',');
-                    flavor.Value = "cookieFlavor" + count;
-                    DesertFlavorDdl.Items.Add(flavor);
-                    count++;
-                }
+                ////Hiding buttons
+                addItemBtn.Style["Display"] = "none";
+                checkOutBtn.Style["Display"] = "none";
+
             }
+
+            /// Execute this update if cake button was clicked 
+            if (cakeBtnFlag)
+            {
+                //Hiding orders Table
+                ordersTable.Style["Display"] = "None";
+
+                //Displaying orders details table
+                orderTableTitle.InnerText = "- Cake -";
+                orderDetailsTable.Style["Display"] = "table";
+            }
+
 
         }
 
-        //Retrieving Cheesecake Flavor
-        public void loadCheeseCakeFlavor()
-        {
-            DesertFlavorDdl.Items.Clear();
-
-            bool validCCFlavors = false;
-            count = 0;
-            foreach (string word in flavorFile)
-            {
-                if (word.Contains("CheesecakeFlavorsStart"))
-                {
-                    validCCFlavors = true;
-                    continue;
-                }
-                else if (word.Contains(" CheesecakeFlavorsEnd"))
-                    return;
-                if (validCCFlavors == true)
-                {
-                    flavor = new ListItem();
-                    flavor.Text = word.Trim(',');
-                    flavor.Value = "CCFlavor" + count;
-                    DesertFlavorDdl.Items.Add(flavor);
-                    count++;
-                }
-            }
-        }
 
     }
 }

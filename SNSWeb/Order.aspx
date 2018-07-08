@@ -5,18 +5,11 @@
 
     <head runat="server">
         <link href="SNSStyle.css" rel="stylesheet">
-        <title>Order</title>
-        <script type="text/javascript"  src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-        <script type="text/javascript"  src= "Scripts/SNSScripts.js"></script>
-         <script>
-   <!-- $( document ).ready(function() {
-        alert( "document loaded" );
-    });
- 
-    $( window ).on( "load", function() {
-       alert($('#pageStateFadeOut').val());
-    });-->
-    </script>
+        <title id="">Order</title>
+        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+        <script type="text/javascript" src="Scripts/SNSScripts.js"></script>
+        <script>
+        </script>
     </head>
 
     <body>
@@ -27,94 +20,108 @@
             <li><a class="NavLink" href="Registration.aspx">Sign Up</a></li>
             <img class="NavImg" src="/Images/SNSlogo.png" />
             <li><a class="NavLink" href="Order.aspx">Order</a></li>
-            <li><a class="NavLink" href="#">About</a></li>
+            <li><a class="NavLink" href="about.asp">About</a></li>
+            <li><img class="Cart" src="/Images/ovenIcon.png" /></li>
         </ul>
 
         <form id="form1" runat="server">
-            <h2 id="orderTableTitle"> - Order - </h2>
+            <asp:HiddenField runat="server" id="pageFadeOut"></asp:HiddenField>
+            <asp:HiddenField runat="server" id="pageFadeIn"></asp:HiddenField>
+            
+            <h2 runat="server" id="orderTableTitle"> - Order - </h2>
+            
             <div class="orderTableDiv">
-
                 <asp:Table id="ordersTable" runat="server" CssClass="orderTable">
 
-                    <asp:TableRow runat="server">
-                        <asp:TableCell runat="server">Occasion:</asp:TableCell>
-                        <asp:TableCell runat="server">
-                            <asp:DropDownList CssClass="dropDownList" runat="server" id="occasionDdl"></asp:DropDownList>
+                    <asp:TableRow runat="server" id="cakeRow">
+                        <asp:TableCell>
+                            <div class="orderRow">
+                                <asp:LinkButton OnClick= "cakeButton_Click" Font-Underline="false" ForeColor="Black" runat="server" Text="- Cakes -"></asp:LinkButton>
+                            </div>
                         </asp:TableCell>
                     </asp:TableRow>
 
-                    <asp:TableRow runat="server">
-                        <asp:TableCell runat="server">Desert Type: </asp:TableCell>
-                        <asp:TableCell runat="server">
-                     
-                                <asp:DropDownList CssClass="dropDownList" OnSelectedIndexChanged="desertDDlChanged" 
-                                runat="server" AutoPostBack= "true" id="desertTypeDdl"></asp:DropDownList>
-                 
+                    <asp:TableRow runat="server" id="cupcakeRow">
+                        <asp:TableCell>
+                            <div class="orderRow">
+                                <asp:LinkButton OnClick="cakeButton_Click" Font-Underline="false" ForeColor="Black" runat="server" Text="- Cupcakes -"></asp:LinkButton>
+                            </div>
                         </asp:TableCell>
                     </asp:TableRow>
 
-                    <asp:TableRow runat="server">
-                        <asp:TableCell runat="server">Cake Stand/ Tower Rental:</asp:TableCell>
-                        <asp:TableCell runat="server">
-                            <asp:RadioButton id="radioBtnYes" CssClass="radioBtn" runat="server" Text="Yes"></asp:RadioButton>
-                            <asp:RadioButton id="radioBtnNo" CssClass="radioBtn" runat="server" Text="No"></asp:RadioButton>
+                    <asp:TableRow runat="server" id="cheesecakeRow">
+                        <asp:TableCell>
+                            <div class="orderRow">
+                                <asp:LinkButton OnClick="cakeButton_Click" Font-Underline="false" ForeColor="Black" runat="server" Text="- Cheesecake -"></asp:LinkButton>
+                            </div>
                         </asp:TableCell>
                     </asp:TableRow>
 
-                    <asp:TableRow runat="server">
-                        <asp:TableCell runat="server">Serving Size:</asp:TableCell>
-                        <asp:TableCell runat="server">
-                            <asp:DropDownList CssClass="dropDownList" runat="server" id="servingSizeDdl"></asp:DropDownList>
-                        </asp:TableCell>
-                    </asp:TableRow>
-
-                    <asp:TableRow runat="server">
-                        <asp:TableCell runat="server">Desert Flavor:</asp:TableCell>
-                        <asp:TableCell runat="server">
-                            <asp:DropDownList CssClass="dropDownList" id="DesertFlavorDdl" runat="server"></asp:DropDownList>
-                        </asp:TableCell>
-                    </asp:TableRow>
-
-                    <asp:TableRow runat="server">
-                        <asp:TableCell runat="server">Frosting Flavor:</asp:TableCell>
-                        <asp:TableCell runat="server">
-                            <asp:DropDownList CssClass="dropDownList" runat="server" id="frostingFlavorDdl"></asp:DropDownList>
-                        </asp:TableCell>
-                    </asp:TableRow>
-
-                    <asp:TableRow runat="server">
-                        <asp:TableCell runat="server"> Food Alergies:</asp:TableCell>
-                        <asp:TableCell runat="server">
-                            <textarea class="textBox" runat="server" id="foodAlergiesTextArea"></textarea>
+                    <asp:TableRow runat="server" id="cookiesRow">
+                        <asp:TableCell>
+                            <div class="orderRow">
+                                <asp:LinkButton OnClick="cakeButton_Click" Font-Underline="false" ForeColor="Black" runat="server" Text="- Cookies -"></asp:LinkButton>
+                            </div>
                         </asp:TableCell>
                     </asp:TableRow>
 
                 </asp:Table>
 
-                <asp:Table id="confTable" runat="server" CssClass="orderConfTable">
-
-                    <asp:TableRow runat="server">
-                        <asp:TableCell runat="server">Occasion:</asp:TableCell>
-                        <asp:TableCell runat="server">
-                            <asp:DropDownList CssClass="dropDownList" runat="server" ></asp:DropDownList>
+                <asp:Table runat="server" id="orderDetailsTable" CssClass = "orderDetailsTable">
+                    
+                    <asp:TableRow runat="server" id="occasionRow">
+                        <asp:TableCell>
+                            <div class="orderRow">
+                                <asp:Label runat="server" id="occasionLbl" />
+                                <asp:DropDownList runat="server" id="occasionDdl" CssClass="dropDownList" />
+                            </div>
                         </asp:TableCell>
                     </asp:TableRow>
 
-                    <asp:TableRow runat="server">
-                        <asp:TableCell runat="server">Desert Type: </asp:TableCell>
-                        <asp:TableCell runat="server">
-                     
-                                <asp:DropDownList CssClass="dropDownList" runat="server" ></asp:DropDownList>
+                    <asp:TableRow runat="server" id="dessertTypeRow">
+                        <asp:TableCell>
+                            <div class="orderRow">
+                                <asp:Label runat="server" id="desertTypeLbl" />
+                                <asp:DropDownList runat="server" id="desertTypeDdl" CssClass="dropDownList" />
+                            </div>
                         </asp:TableCell>
                     </asp:TableRow>
+
+                    <asp:TableRow runat="server" id="desertFlavorRow">
+                        <asp:TableCell>
+                            <div class="orderRow">
+                                <asp:Label runat="server" id="desertFlavorLbl" />
+                                <asp:DropDownList runat="server" id="desertFlavorDdl" CssClass="dropDownList" />
+                            </div>
+                        </asp:TableCell>
+                    
+                    <asp:TableRow runat="server" id="frostingTypeRow">
+                        <asp:TableCell>
+                            <div class="orderRow">
+                                <asp:Label runat="server" id="frostingFlavorLbl" />
+                                <asp:DropDownList runat="server" id="frostingFlavorDdl" CssClass="dropDownList" />
+                            </div>
+                        </asp:TableCell>
+
+                        <asp:TableRow runat="server" id="servingSizeRow">
+                        <asp:TableCell>
+                            <div class="orderRow">
+                                <asp:Label runat="server" id="servingSizeLbl" />
+                                <asp:TextBox runat="server" id="servingSizeDdl" CssClass="textBox" />
+                            </div>
+                        </asp:TableCell>
+                    </asp:TableRow>
+                    </asp:TableRow>
+                    
                 </asp:Table>
 
             </div>
             <div align="center" class="orderBtnDiv">
-                <asp:Button id="addItemBtn" CssClass="OrderFormBtn" runat="server" Text="Add Item" OnClientClick="addItemBtn_Click();" />
-                <asp:Button id="doneBtn" CssClass="OrderFormBtn" OnClientClick="doneBtnClick();" runat="server" Text="Done" />
-                <asp:Button id="checkOutBtn" CssClass="OrderFormChkBtn" runat="server" Text="Checkout" OnClick= "checkOutBtn_Click" />
+                <asp:Button id="addItemBtn" CssClass="OrderFormBtn" runat="server" Text="Add Item" OnClick="addItemBtn_Click" />
+                <asp:Button id="doneBtn" CssClass="OrderFormBtn" OnClick="addItemBtn_Click" runat="server" Text="Done" />
+                <asp:Button id="checkOutBtn" CssClass="OrderFormChkBtn" runat="server" Text="Checkout" OnClick="addItemBtn_Click" />
             </div>
+
         </form>
 
         <ul>
@@ -123,8 +130,6 @@
             <li><a class="bottomNavLink" href="Order.aspx">Order</a></li>
             <li><a class="bottomNavLink" href="about.asp">About</a></li>
         </ul>
-        <asp:HiddenField runat="server" id = "hiddenField"></asp:HiddenField>
-        <asp:HiddenField runat="server" id = "hiddenField1"></asp:HiddenField>
 
     </body>
 

@@ -10,12 +10,14 @@
     <body>
         <h1>SNS Cake Bakery</h1>
 
+
         <ul>
             <li><a class="NavLink" href="Login.aspx">Home</a></li>
             <li><a class="NavLink" href="Registration.aspx">Sign Up</a></li>
             <img class ="NavImg" src= "/Images/SNSlogo.png"/>
             <li><a class="NavLink" href="Order.aspx">Order</a></li>
             <li><a class="NavLink" href="about.asp">About</a></li>
+             <li><img class ="Cart" src= "/Images/ovenIcon.png"/></li>
         </ul>
 
         <form id="form1" runat="server">

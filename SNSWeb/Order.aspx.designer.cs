@@ -15,34 +15,34 @@ namespace SNSWeb {
 		
 		protected System.Web.UI.HtmlControls.HtmlForm form1;
 		
+		protected System.Web.UI.WebControls.HiddenField pageFadeOut;
+		
+		protected System.Web.UI.WebControls.HiddenField pageFadeIn;
+		
+		protected System.Web.UI.HtmlControls.HtmlGenericControl orderTableTitle;
+		
 		protected System.Web.UI.WebControls.Table ordersTable;
 		
+		protected System.Web.UI.WebControls.TableRow cakeRow;
+		
+		protected System.Web.UI.WebControls.TableRow cupcakeRow;
+		
+		protected System.Web.UI.WebControls.TableRow cheesecakeRow;
+		
+		protected System.Web.UI.WebControls.TableRow cookiesRow;
+		
+		protected System.Web.UI.WebControls.Table orderDetailsTable;
+		
+		protected System.Web.UI.WebControls.TableRow occasionRow;
+		
+		protected System.Web.UI.WebControls.Label occasionLbl;
+		
 		protected System.Web.UI.WebControls.DropDownList occasionDdl;
-		
-		protected System.Web.UI.WebControls.DropDownList desertTypeDdl;
-		
-		protected System.Web.UI.WebControls.RadioButton radioBtnYes;
-		
-		protected System.Web.UI.WebControls.RadioButton radioBtnNo;
-		
-		protected System.Web.UI.WebControls.DropDownList servingSizeDdl;
-		
-		protected System.Web.UI.WebControls.DropDownList DesertFlavorDdl;
-		
-		protected System.Web.UI.WebControls.DropDownList frostingFlavorDdl;
-		
-		protected System.Web.UI.HtmlControls.HtmlTextArea foodAlergiesTextArea;
-		
-		protected System.Web.UI.WebControls.Table confTable;
 		
 		protected System.Web.UI.WebControls.Button addItemBtn;
 		
 		protected System.Web.UI.WebControls.Button doneBtn;
 		
 		protected System.Web.UI.WebControls.Button checkOutBtn;
-		
-		protected System.Web.UI.WebControls.HiddenField hiddenField;
-		
-		protected System.Web.UI.WebControls.HiddenField hiddenField1;
 	}
 }
